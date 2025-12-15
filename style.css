@@ -58,4 +58,11 @@ footer { background: #111827; color: #9ca3af; padding: 60px 5% 20px; }
 
 .btn { padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; font-weight: 500; }
 .btn-primary { background: var(--primary); color: white; }
+
 .btn-secondary { background: #9ca3af; color: white; }
+/* style.css के सबसे नीचे जोड़ें */
+#math-chapter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* मोबाइल पर 1, पीसी पर 2 कॉलम */
+    gap: 20px;
+}
