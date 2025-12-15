@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -39,22 +40,37 @@
         </section>
 
         <div class="stats-bar">
-            <div class="stat-item"><div class="stat-num">50k+</div><div>Questions</div></div>
-            <div class="stat-item"><div class="stat-num">10k+</div><div>Students</div></div>
-            <div class="stat-item"><div class="stat-num">4.8/5</div><div>Rating</div></div>
+            <div class="stat-item">
+                <div class="stat-num">50k+</div>
+                <div>Questions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">10k+</div>
+                <div>Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">4.8/5</div>
+                <div>Rating</div>
+            </div>
         </div>
 
         <section class="features" id="features">
             <h2 class="section-title">Why Choose Us?</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <span class="f-icon">🎯</span><h3>Exam Simulation</h3><p>Real NTA interface simulation.</p>
+                    <span class="f-icon">🎯</span>
+                    <h3>Exam Simulation</h3>
+                    <p>Real NTA interface simulation to make you comfortable with the exam environment.</p>
                 </div>
                 <div class="feature-card">
-                    <span class="f-icon">📊</span><h3>Deep Analysis</h3><p>Get insights with graphical reports.</p>
+                    <span class="f-icon">📊</span>
+                    <h3>Deep Analysis</h3>
+                    <p>Don't just get marks, get insights. Know your weak areas with graphical reports.</p>
                 </div>
                 <div class="feature-card">
-                    <span class="f-icon">🇮🇳</span><h3>Hindi Support</h3><p>Curated for Hindi medium aspirants.</p>
+                    <span class="f-icon">🇮🇳</span>
+                    <h3>Hindi Support</h3>
+                    <p>Pure Hindi and Hinglish content curated specifically for Hindi medium aspirants.</p>
                 </div>
             </div>
         </section>
@@ -62,17 +78,38 @@
         <section class="testimonials" id="testimonials">
             <h2 class="section-title" style="text-align: center;">Success Stories</h2>
             <div class="testi-grid">
-                <div class="testi-card"><p>"Sequence & Series questions were amazing!"</p><div class="user-info"><strong>Rahul Kumar</strong></div></div>
-                <div class="testi-card"><p>"Hindi medium ke liye best platform."</p><div class="user-info"><strong>Amit Singh</strong></div></div>
+                <div class="testi-card">
+                    <p>"Sequence & Series questions were amazing! Best for JEE Advanced!"</p>
+                    <div class="user-info">
+                        <strong>Rahul Kumar</strong><br><small>IIT Bombay (AIR 104)</small>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p>"Hindi medium ke liye aisa platform maine pehli baar dekha."</p>
+                    <div class="user-info">
+                        <strong>Amit Singh</strong><br><small>NIT Trichy</small>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer id="contact">
             <div class="footer-grid">
-                <div class="footer-col"><h3>JEE Rankers</h3><p>Quality education for all.</p></div>
-                <div class="footer-col"><h3>Links</h3><ul><li>About</li><li>Syllabus</li></ul></div>
+                <div class="footer-col">
+                    <h3>JEE Rankers</h3>
+                    <p>Making quality education accessible to every corner of India.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Syllabus</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">&copy; 2025 JEE Rankers. Designed by Md Imteyaj.</div>
+            <div class="copyright">
+                &copy; 2025 JEE Rankers. Designed by Md Imteyaj.
+            </div>
         </footer>
     </div>
 
@@ -83,21 +120,57 @@
         </header>
 
         <main style="flex: 1; padding: 20px; overflow-y: auto;">
+            
             <div id="screen-subjects" class="screen active">
-                <h2 style="margin-bottom: 20px;">Select Subject</h2>
+                <h2 style="margin-bottom: 20px;">विषय चुनें (Select Subject)</h2>
                 <div class="dash-grid">
-                    <div class="dash-card" onclick="alert('Coming Soon: Physics')"><div style="font-size: 3rem;">⚛️</div><h3>Physics</h3></div>
-                    <div class="dash-card" onclick="alert('Coming Soon: Chemistry')"><div style="font-size: 3rem;">🧪</div><h3>Chemistry</h3></div>
-                    <div class="dash-card" style="border: 2px solid var(--primary);" onclick="app.showScreen('screen-chapters')"><div style="font-size: 3rem;">📐</div><h3>Mathematics</h3></div>
+                    
+                    <div class="dash-card" style="border-left: 5px solid #ef4444;" onclick="app.loadPhysicsChapters()">
+                        <div style="font-size: 3rem;">⚛️</div>
+                        <h3>Physics</h3>
+                        <p style="font-size: 0.9rem; color: #666;">Mechanics, Optics, etc.</p>
+                    </div>
+
+                    <div class="dash-card" style="border-left: 5px solid #2563eb;" onclick="app.loadMathChapters()">
+                        <div style="font-size: 3rem;">📐</div>
+                        <h3>Mathematics</h3>
+                        <p style="font-size: 0.9rem; color: #666;">Algebra, Calculus, etc.</p>
+                    </div>
+                    
+                    <div class="dash-card" style="border-left: 5px solid #f59e0b;" onclick="alert('Physical Chemistry Chapters coming soon!')">
+                        <div style="font-size: 3rem;">⚗️</div>
+                        <h3>Physical Chemistry</h3>
+                        <p style="font-size: 0.9rem; color: #666;">Mole Concept, Thermodynamics</p>
+                    </div>
+
+                    <div class="dash-card" style="border-left: 5px solid #10b981;" onclick="alert('Organic Chemistry Chapters coming soon!')">
+                        <div style="font-size: 3rem;">🧪</div>
+                        <h3>Organic Chemistry</h3>
+                        <p style="font-size: 0.9rem; color: #666;">GOC, Hydrocarbons</p>
+                    </div>
+
+                    <div class="dash-card" style="border-left: 5px solid #8b5cf6;" onclick="alert('Inorganic Chemistry Chapters coming soon!')">
+                        <div style="font-size: 3rem;">🧱</div>
+                        <h3>Inorganic Chemistry</h3>
+                        <p style="font-size: 0.9rem; color: #666;">Periodic Table, Bonding</p>
+                    </div>
+
                 </div>
             </div>
 
             <div id="screen-chapters" class="screen">
                 <button class="btn btn-secondary" onclick="app.showScreen('screen-subjects')" style="margin-bottom: 20px;">← Back</button>
-                <h2>Mathematics Chapters</h2>
+                <h2>Chapters</h2>
                 <div id="math-chapter-list" style="margin-top: 20px;">
                     </div>
             </div>
+
+            <div id="screen-config" class="screen">
+                <h2>Test Configuration</h2>
+                <p>Coming soon...</p>
+                <button class="btn btn-secondary" onclick="app.showScreen('screen-chapters')">Back</button>
+            </div>
+
         </main>
     </div>
 
