@@ -1,21 +1,38 @@
 const app = {
-    // 1. Enter App Logic (Fix: Seedha Subject Page)
+    // === 1. LANDING PAGE -> SUBJECT PAGE ===
     enterApp: function() {
+        // Landing page ko chhupa do
         document.getElementById('landing-page').style.display = 'none';
-        document.getElementById('app-dashboard').style.display = 'flex'; 
         
-        // Yaha important hai: Pahle sab screens chupao, fir sirf 'Subject' wali dikhao
+        // Dashboard (Page 2) ko dikhao
+        document.getElementById('app-dashboard').style.display = 'flex';
+        
+        // Aur turant SUBJECTS wala screen active karo
         this.showScreen('screen-subjects');
     },
 
-    // 2. Logout Logic
+    // === 2. LOGOUT (Wapas Home pe) ===
     logout: function() {
         document.getElementById('app-dashboard').style.display = 'none';
         document.getElementById('landing-page').style.display = 'block';
         window.scrollTo(0, 0);
     },
 
-    // 3. Mobile Sidebar Toggle
+    // === 3. NAVIGATION HANDLER ===
+    showScreen: function(screenId) {
+        // Sabhi screens (Subjects/Chapters) ko chhupa do
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        
+        // Sirf maangi gayi screen ko dikhao
+        document.getElementById(screenId).classList.add('active');
+        
+        // Mobile sidebar ko band kar do agar khula hai to
+        const sidebar = document.getElementById('mySidebar');
+        if(sidebar && sidebar.classList.contains('active')) {
+            this.toggleSidebar();
+        }
+    },
+
     toggleSidebar: function() {
         const sidebar = document.getElementById('mySidebar');
         const overlay = document.querySelector('.mobile-overlay');
@@ -23,13 +40,7 @@ const app = {
         if(overlay) overlay.classList.toggle('active');
     },
 
-    // 4. Navigation Logic
-    showScreen: function(screenId) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(screenId).classList.add('active');
-    },
-
-    // ================= DATA SECTION =================
+    // === 4. DATA LOADING FUNCTIONS ===
 
     // MATHS
     loadMathChapters: function() {
@@ -122,7 +133,7 @@ const app = {
         const container = document.getElementById('chapter-list-container');
         container.innerHTML = ''; 
 
-        // Heading Change
+        // Title update karo
         document.getElementById('chapter-heading').innerText = title;
 
         list.forEach((chap, i) => {
@@ -133,16 +144,17 @@ const app = {
                     <h4 style="margin:0; color:#1e293b; font-size:1.05rem;">${i+1}. ${chap.hi}</h4>
                     <p style="margin:4px 0 0; color:#64748b; font-size:0.9rem;">${chap.en}</p>
                 </div>
-                <button class="btn-start" onclick="alert('Chapter selected: ${chap.en}')">Start Test</button>
+                <button class="btn-start" onclick="alert('Starting Test: ${chap.en}')">Start Test</button>
             `;
             container.appendChild(div);
         });
 
+        // Ab Chapters wala screen dikhao
         this.showScreen('screen-chapters');
     }
 };
 
-// Security: No F12
+// Disable Shortcuts
 document.addEventListener('keydown', function(e) {
-    if(e.keyCode == 123) { return false; }
+    if(e.keyCode == 123) return false; 
 });
