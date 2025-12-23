@@ -17,7 +17,7 @@
 <body oncontextmenu="return false;">
 
     <div id="landing-page">
-        <nav class="navbar 3d-box">
+        <nav class="navbar">
             <div class="brand">
                 <span class="logo-icon">🚀</span> JEE Rankers
             </div>
@@ -37,7 +37,7 @@
             </div>
             
             <div class="hero-visual">
-                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="3D Education" class="main-img 3d-float">
+                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="3D Education" class="main-img">
             </div>
         </section>
 
@@ -52,21 +52,29 @@
         </footer>
     </div>
 
-    <div id="app-dashboard" style="display: none;"> <aside class="sidebar">
+    <div id="app-dashboard" style="display: none;">
+        
+        <div class="mobile-overlay" onclick="app.toggleSidebar()"></div>
+
+        <aside class="sidebar" id="mySidebar">
             <div class="brand-side">JEE Rankers</div>
-            <div class="menu-item active">📚 Dashboard</div>
-            <div class="menu-item" onclick="alert('Analysis Coming Soon')">📊 Analytics</div>
+            <div class="menu-item active" onclick="app.showScreen('screen-subjects'); app.toggleSidebar()">📚 Subjects</div>
+            <div class="menu-item" onclick="alert('Analysis Coming Soon'); app.toggleSidebar()">📊 Analytics</div>
             <div class="menu-item logout" onclick="app.logout()">🚪 Logout</div>
         </aside>
 
         <main class="main-area">
             <header class="top-bar">
-                <h2>Welcome, Future IITian!</h2>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="menu-btn-mobile" onclick="app.toggleSidebar()">☰</button>
+                    <h2>Welcome, Aspirant!</h2>
+                </div>
                 <div class="user-badge-3d">S</div>
             </header>
             
             <div id="screen-subjects" class="screen active">
                 <h3 class="section-head">Select Your Subject</h3>
+                
                 <div class="dash-grid">
                     
                     <div class="card-3d physics" onclick="app.loadPhysicsChapters()">
@@ -103,7 +111,7 @@
             </div>
 
             <div id="screen-chapters" class="screen">
-                <button class="btn-3d btn-back" onclick="app.showScreen('screen-subjects')">← Back</button>
+                <button class="btn-3d btn-back" onclick="app.showScreen('screen-subjects')">← Back to Subjects</button>
                 <h2 id="chapter-heading">Chapters</h2>
                 <div id="chapter-list-container" class="chapter-grid">
                     </div>
