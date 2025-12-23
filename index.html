@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEE Rankers - The Ultimate Prep Platform</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:;">
+    <title>JEE Rankers | India's Premium Prep Platform</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -13,154 +14,107 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <div id="landing-page">
+<body oncontextmenu="return false;"> <div id="landing-page">
         <nav class="navbar">
-            <div class="brand">🚀 JEE Rankers</div>
+            <div class="brand">
+                <span class="logo-icon">🎓</span> JEE Rankers
+            </div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#features">Features</a>
-                <a href="#testimonials">Reviews</a>
-                <a href="#contact">Contact</a>
+                <a href="#syllabus">Syllabus</a>
+                <button class="btn-login" onclick="app.enterApp()">Start Learning</button>
             </div>
-            <button class="btn-login" onclick="app.enterApp()">Login / Start</button>
         </nav>
 
         <section class="hero" id="home">
-            <div class="hero-text">
-                <h1>Crack JEE Mains with <br><span>Precision & Speed</span></h1>
-                <p>India's most advanced self-practice platform with real-time analysis, hard-level questions, and Hindi support.</p>
-                <button class="btn-login" style="padding: 15px 40px; font-size: 1.1rem;" onclick="app.enterApp()">Start Practicing Now →</button>
+            <div class="hero-content">
+                <span class="badge">New Syllabus 2025 Ready</span>
+                <h1>Master JEE Mains with <br><span class="highlight">Elite Precision</span></h1>
+                <p>Access the most advanced testing platform designed specifically for Hindi & English medium aspirants. Secure, Fast, and Effective.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary-lg" onclick="app.enterApp()">Start Practicing Free →</button>
+                    <button class="btn-secondary-lg">View Syllabus</button>
+                </div>
             </div>
-            <div class="hero-img">
-                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="Student Studying">
+            <div class="hero-visual">
+                <div class="floating-card c1">Physics ⚛️</div>
+                <div class="floating-card c2">Chemistry ⚗️</div>
+                <div class="floating-card c3">Maths 📐</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="Education" class="main-img">
             </div>
         </section>
 
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-num">50k+</div>
-                <div>Questions</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">10k+</div>
-                <div>Students</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">4.8/5</div>
-                <div>Rating</div>
-            </div>
+        <div class="stats-strip">
+            <div class="stat-box"><strong>50k+</strong><span>Questions</span></div>
+            <div class="stat-box"><strong>10k+</strong><span>Users</span></div>
+            <div class="stat-box"><strong>4.9/5</strong><span>Rating</span></div>
+            <div class="stat-box"><strong>100%</strong><span>Secure</span></div>
         </div>
 
-        <section class="features" id="features">
-            <h2 class="section-title">Why Choose Us?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <span class="f-icon">🎯</span>
-                    <h3>Exam Simulation</h3>
-                    <p>Real NTA interface simulation to make you comfortable with the exam environment.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="f-icon">📊</span>
-                    <h3>Deep Analysis</h3>
-                    <p>Don't just get marks, get insights. Know your weak areas with graphical reports.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="f-icon">🇮🇳</span>
-                    <h3>Hindi Support</h3>
-                    <p>Pure Hindi and Hinglish content curated specifically for Hindi medium aspirants.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials" id="testimonials">
-            <h2 class="section-title" style="text-align: center;">Success Stories</h2>
-            <div class="testi-grid">
-                <div class="testi-card">
-                    <p>"Sequence & Series questions were amazing! Best for JEE Advanced!"</p>
-                    <div class="user-info">
-                        <strong>Rahul Kumar</strong><br><small>IIT Bombay (AIR 104)</small>
-                    </div>
-                </div>
-                <div class="testi-card">
-                    <p>"Hindi medium ke liye aisa platform maine pehli baar dekha."</p>
-                    <div class="user-info">
-                        <strong>Amit Singh</strong><br><small>NIT Trichy</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <footer id="contact">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>JEE Rankers</h3>
-                    <p>Making quality education accessible to every corner of India.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li>About Us</li>
-                        <li>Syllabus</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 JEE Rankers. Designed by Md Imteyaj.
+            <div class="footer-content">
+                <p>&copy; 2025 JEE Rankers Inc. All rights reserved. <br> Built with ❤️ for India.</p>
             </div>
         </footer>
     </div>
 
     <div id="app-dashboard">
-        <header class="dash-header">
-            <div class="brand">JEE Rankers <span style="font-size: 0.8rem; margin-left: 10px; color: #666; font-weight:normal;">Dashboard</span></div>
-            <button class="btn btn-secondary" onclick="app.logout()">Logout</button>
-        </header>
+        <aside class="sidebar">
+            <div class="brand-side">JEE Rankers</div>
+            <div class="menu-item active" onclick="app.showScreen('screen-subjects')">📚 Dashboard</div>
+            <div class="menu-item" onclick="alert('Analysis Feature Coming Soon')">📊 Analytics</div>
+            <div class="menu-item" onclick="alert('Profile Feature Coming Soon')">👤 Profile</div>
+            <div class="menu-item logout" onclick="app.logout()">🚪 Logout</div>
+        </aside>
 
-        <main style="flex: 1; padding: 20px; overflow-y: auto;">
+        <main class="main-area">
+            <header class="top-bar">
+                <h2>Welcome back, Aspirant!</h2>
+                <div class="user-badge">S</div>
+            </header>
             
             <div id="screen-subjects" class="screen active">
-                <h2 style="margin-bottom: 20px;">विषय चुनें (Select Subject)</h2>
+                <h3 class="section-head">Select Your Subject</h3>
                 <div class="dash-grid">
                     
-                    <div class="dash-card" style="border-left: 5px solid #ef4444;" onclick="app.loadPhysicsChapters()">
-                        <div style="font-size: 3rem;">⚛️</div>
+                    <div class="subject-card physics" onclick="app.loadPhysicsChapters()">
+                        <div class="icon-bg">⚛️</div>
                         <h3>Physics</h3>
-                        <p style="font-size: 0.9rem; color: #666;">Mechanics, Optics, etc.</p>
+                        <p>31 Chapters • Mechanics, Electrodynamics</p>
                     </div>
 
-                    <div class="dash-card" style="border-left: 5px solid #2563eb;" onclick="app.loadMathChapters()">
-                        <div style="font-size: 3rem;">📐</div>
+                    <div class="subject-card math" onclick="app.loadMathChapters()">
+                        <div class="icon-bg">📐</div>
                         <h3>Mathematics</h3>
-                        <p style="font-size: 0.9rem; color: #666;">Algebra, Calculus, etc.</p>
+                        <p>30 Chapters • Calculus, Algebra</p>
                     </div>
                     
-                    <div class="dash-card" style="border-left: 5px solid #f59e0b;" onclick="alert('Physical Chemistry Chapters coming soon!')">
-                        <div style="font-size: 3rem;">⚗️</div>
+                    <div class="subject-card chem-phy" onclick="app.loadPhysicalChem()">
+                        <div class="icon-bg">⚖️</div>
                         <h3>Physical Chemistry</h3>
-                        <p style="font-size: 0.9rem; color: #666;">Mole Concept, Thermodynamics</p>
+                        <p>Thermodynamics, Equilibrium</p>
                     </div>
 
-                    <div class="dash-card" style="border-left: 5px solid #10b981;" onclick="alert('Organic Chemistry Chapters coming soon!')">
-                        <div style="font-size: 3rem;">🧪</div>
+                    <div class="subject-card chem-org" onclick="app.loadOrganicChem()">
+                        <div class="icon-bg">🧪</div>
                         <h3>Organic Chemistry</h3>
-                        <p style="font-size: 0.9rem; color: #666;">GOC, Hydrocarbons</p>
+                        <p>Hydrocarbons, GOC, Biomolecules</p>
                     </div>
 
-                    <div class="dash-card" style="border-left: 5px solid #8b5cf6;" onclick="alert('Inorganic Chemistry Chapters coming soon!')">
-                        <div style="font-size: 3rem;">🧱</div>
+                    <div class="subject-card chem-inorg" onclick="app.loadInorganicChem()">
+                        <div class="icon-bg">🧱</div>
                         <h3>Inorganic Chemistry</h3>
-                        <p style="font-size: 0.9rem; color: #666;">Periodic Table, Bonding</p>
+                        <p>Periodic Table, Coordination</p>
                     </div>
 
                 </div>
             </div>
 
             <div id="screen-chapters" class="screen">
-                <button class="btn btn-secondary" onclick="app.showScreen('screen-subjects')" style="margin-bottom: 20px;">← Back</button>
-                <h2>Chapters</h2>
-                <div id="chapter-list-container" style="margin-top: 20px;">
+                <button class="btn-back" onclick="app.showScreen('screen-subjects')">← Back to Subjects</button>
+                <h2 id="chapter-heading">Chapters</h2>
+                <div id="chapter-list-container" class="chapter-grid">
                     </div>
             </div>
 
