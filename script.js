@@ -1,141 +1,146 @@
 const app = {
-    // 1. ऐप में एंटर करना
+    // 1. Enter App Logic
     enterApp: function() {
         document.getElementById('landing-page').style.display = 'none';
-        document.getElementById('app-dashboard').style.display = 'flex';
-        // बाय डिफ़ॉल्ट मैथ लोड करें या खाली रखें
-        this.loadMathChapters();
+        document.getElementById('app-dashboard').style.display = 'flex'; // Use flex for layout
+        this.loadMathChapters(); // Default load
     },
 
-    // 2. लॉगआउट करना
+    // 2. Logout Logic
     logout: function() {
         document.getElementById('app-dashboard').style.display = 'none';
         document.getElementById('landing-page').style.display = 'block';
         window.scrollTo(0, 0);
     },
 
-    // 3. स्क्रीन बदलना
+    // 3. Navigation Logic
     showScreen: function(screenId) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(screenId).classList.add('active');
     },
 
-    // 4. MATHS CHAPTERS (30 Chapters List)
+    // ================= DATA SECTION =================
+
+    // MATHS (Updated)
     loadMathChapters: function() {
-        const mathChapters = [
-            { hi: "गणित के मूलभूत सिद्धांत", en: "Fundamentals of Mathematics" },
-            { hi: "द्विघात समीकरण", en: "Quadratic Equations" },
-            { hi: "अनुक्रम तथा श्रेणी", en: "Sequences and Series" },
-            { hi: "त्रिकोणमितीय फलन", en: "Trigonometric Functions" },
-            { hi: "त्रिकोणमितीय समीकरण", en: "Trigonometric Equations" },
-            { hi: "सारणी", en: "Determinants" },
-            { hi: "आव्यूह", en: "Matrices" },
-            { hi: "समुच्चय", en: "Sets" },
-            { hi: "संबंध और फलन", en: "Relations and Functions" },
-            { hi: "प्रतिलोम त्रिकोणमितीय फलन", en: "Inverse Trigonometric Functions" },
-            { hi: "सीमा, सांतत्य तथा अवकलनीयता", en: "Limits, Continuity & Differentiability" },
-            { hi: "अवकलन की विधियाँ", en: "Methods of Differentiation" },
-            { hi: "अवकलज के अनुप्रयोग", en: "Applications of Derivatives" },
-            { hi: "अनिश्चित समाकलन", en: "Indefinite Integration" },
-            { hi: "निश्चित समाकलन", en: "Definite Integration" },
-            { hi: "समाकलन के अनुप्रयोग", en: "Applications of Integrals" },
-            { hi: "अवकल समीकरण", en: "Differential Equations" },
-            { hi: "सरल रेखा", en: "Straight Line" },
-            { hi: "वृत्त", en: "Circle" },
-            { hi: "शंकु परिच्छेद : परवलय", en: "Conic Section: Parabola" },
-            { hi: "शंकु परिच्छेद : दीर्घवृत्त", en: "Conic Section: Ellipse" },
-            { hi: "शंकु परिच्छेद : अतिपरवलय", en: "Conic Section: Hyperbola" },
-            { hi: "सदिश बीजगणित", en: "Vector Algebra" },
-            { hi: "त्रिविमीय निर्देशांक ज्यामिति", en: "3D Coordinate Geometry" },
-            { hi: "क्रमचय तथा संचय", en: "Permutation and Combination" },
+        const data = [
+            { hi: "समुच्चय, संबंध और फलन", en: "Sets, Relations and Functions" },
+            { hi: "सम्मिश्र संख्याएँ और द्विघात समीकरण", en: "Complex Numbers and Quadratic Equations" },
+            { hi: "आव्यूह और सारणिक", en: "Matrices and Determinants" },
+            { hi: "क्रमचय और संचय", en: "Permutations and Combinations" },
+            { hi: "गणितीय आगमन (हटा दिया गया)", en: "Mathematical Induction (Removed)" }, 
             { hi: "द्विपद प्रमेय", en: "Binomial Theorem" },
-            { hi: "प्रायिकता", en: "Probability" },
-            { hi: "सांख्यिकी", en: "Statistics" },
-            { hi: "सम्मिश्र संख्याएँ", en: "Complex Numbers" },
-            { hi: "त्रिभुज के गुणधर्म", en: "Properties of Triangle" }
+            { hi: "अनुक्रम तथा श्रेणी", en: "Sequence and Series" },
+            { hi: "सीमा, सांतत्य तथा अवकलनीयता", en: "Limit, Continuity and Differentiability" },
+            { hi: "समाकलन गणित", en: "Integral Calculus" },
+            { hi: "अवकल समीकरण", en: "Differential Equations" },
+            { hi: "निर्देशांक ज्यामिति (सरल रेखा, वृत्त, शांकव)", en: "Coordinate Geometry (Lines, Circles, Conics)" },
+            { hi: "त्रिविमीय ज्यामिति", en: "Three Dimensional Geometry" },
+            { hi: "सदिश बीजगणित", en: "Vector Algebra" },
+            { hi: "सांख्यिकी और प्रायिकता", en: "Statistics and Probability" },
+            { hi: "त्रिकोणमिति", en: "Trigonometry" }
         ];
-        this.renderChapterList(mathChapters, "Mathematics");
+        this.renderChapterList(data, "Mathematics");
     },
 
-    // 5. PHYSICS CHAPTERS (31 Chapters from your Image)
+    // PHYSICS (Updated from Syllabus)
     loadPhysicsChapters: function() {
-        const physicsChapters = [
-            { hi: "मूलभूत गणित", en: "Basic Mathematics" },
-            { hi: "सरल रेखा में गति", en: "Motion in a Straight Line" },
-            { hi: "समतल में गति", en: "Motion in a Plane" },
+        const data = [
+            { hi: "इकाई और मापन", en: "Units and Measurements" },
+            { hi: "शुद्धगतिकी (सरल रेखा और समतल)", en: "Kinematics (Straight Line & Plane)" },
             { hi: "गति के नियम", en: "Laws of Motion" },
-            { hi: "कार्य, ऊर्जा, शक्ति", en: "Work, Energy and Power" },
-            { hi: "वृत्तीय गति", en: "Circular Motion" },
-            { hi: "द्रव्यमान केंद्र और कणों के निकाय", en: "Centre of Mass and System of Particles" },
+            { hi: "कार्य, ऊर्जा और शक्ति", en: "Work, Energy and Power" },
             { hi: "घूर्णी गति", en: "Rotational Motion" },
-            { hi: "ठोसों के यांत्रिक गुणधर्म", en: "Mechanical Properties of Solids" },
-            { hi: "द्रवों के यांत्रिक गुणधर्म", en: "Mechanical Properties of Fluids" },
-            { hi: "पदार्थ के ऊष्मीय गुण", en: "Thermal Properties of Matter" },
-            { hi: "गतिशीलता का सिद्धांत", en: "Kinetic Theory of Gases" },
-            { hi: "ऊष्मागतिकी", en: "Thermodynamics" },
-            { hi: "दोलन", en: "Oscillations" },
-            { hi: "तरंगें", en: "Waves" },
-            { hi: "स्थिर विद्युत", en: "Electrostatics" },
-            { hi: "अर्धचालक पदार्थ", en: "Semiconductors" },
-            { hi: "संधारित्र", en: "Capacitor" },
             { hi: "गुरुत्वाकर्षण", en: "Gravitation" },
-            { hi: "विद्युत धारा", en: "Electric Current" },
-            { hi: "गतिमान आवेश और चुंबकत्व", en: "Moving Charges and Magnetism" },
-            { hi: "चुंबकीय पदार्थ", en: "Magnetic Materials" },
-            { hi: "विद्युत चुम्बकीय प्रेरण", en: "Electromagnetic Induction" },
-            { hi: "विकिरण तथा पदार्थ की द्वैत प्रकृति", en: "Dual Nature of Radiation and Matter" },
-            { hi: "प्रत्यावर्ती धारा", en: "Alternating Current" },
-            { hi: "परमाणु संरचना", en: "Structure of Atom" },
+            { hi: "ठोस और द्रवों के गुण", en: "Properties of Solids and Liquids" },
+            { hi: "ऊष्मागतिकी", en: "Thermodynamics" },
+            { hi: "गैस का अणुगति सिद्धांत", en: "Kinetic Theory of Gases" },
+            { hi: "दोलन और तरंगें", en: "Oscillations and Waves" },
+            { hi: "स्थिर विद्युत", en: "Electrostatics" },
+            { hi: "विद्युत धारा", en: "Current Electricity" },
+            { hi: "धारा का चुंबकीय प्रभाव", en: "Magnetic Effects of Current and Magnetism" },
+            { hi: "विद्युत चुम्बकीय प्रेरण और प्रत्यावर्ती धारा", en: "EMI and AC" },
             { hi: "विद्युत चुम्बकीय तरंगें", en: "Electromagnetic Waves" },
-            { hi: "किरण प्रकाशिकी", en: "Ray Optics" },
-            { hi: "तरंग प्रकाशिकी", en: "Wave Optics" },
-            { hi: "नाभिक", en: "Nucleus" },
-            { hi: "इकाई और मापन", en: "Units and Measurements" }
+            { hi: "प्रकाशिकी (किरण और तरंग)", en: "Optics (Ray and Wave)" },
+            { hi: "विकिरण और द्रव्य की द्वैत प्रकृति", en: "Dual Nature of Matter and Radiation" },
+            { hi: "परमाणु और नाभिक", en: "Atoms and Nuclei" },
+            { hi: "इलेक्ट्रॉनिक युक्तियाँ", en: "Electronic Devices" },
+            { hi: "प्रायोगिक कौशल", en: "Experimental Skills" }
         ];
-        this.renderChapterList(physicsChapters, "Physics");
+        this.renderChapterList(data, "Physics");
     },
 
-    // 6. CHEMISTRY PLACEHOLDERS (Logic for 3 buttons)
+    // CHEMISTRY 1: PHYSICAL (Updated from PDF)
     loadPhysicalChem: function() {
-        // जब आप चैप्टर लिस्ट देंगे, यहाँ डाल देंगे
-        alert("Physical Chemistry Chapters will be added soon!");
+        const data = [
+            { hi: "रसायन विज्ञान की कुछ मूल अवधारणाएँ", en: "Some Basic Concepts in Chemistry" },
+            { hi: "परमाणु संरचना", en: "Atomic Structure" },
+            { hi: "रासायनिक आबंधन और आणविक संरचना", en: "Chemical Bonding and Molecular Structure" },
+            { hi: "रासायनिक ऊष्मगतिकी", en: "Chemical Thermodynamics" },
+            { hi: "विलयन", en: "Solutions" },
+            { hi: "साम्यावस्था", en: "Equilibrium" },
+            { hi: "रेडॉक्स अभिक्रियाएँ और वैद्युतरसायन", en: "Redox Reactions and Electrochemistry" },
+            { hi: "रासायनिक बलगतिकी", en: "Chemical Kinetics" }
+        ];
+        this.renderChapterList(data, "Physical Chemistry");
     },
-    loadOrganicChem: function() {
-        alert("Organic Chemistry Chapters will be added soon!");
-    },
+
+    // CHEMISTRY 2: INORGANIC (Updated from PDF)
     loadInorganicChem: function() {
-        alert("Inorganic Chemistry Chapters will be added soon!");
+        const data = [
+            { hi: "तत्वों का वर्गीकरण और गुणधर्मों में आवर्विता", en: "Classification of Elements and Periodicity" },
+            { hi: "p-ब्लॉक के तत्व (Group 13-18)", en: "p- Block Elements" },
+            { hi: "d और f-ब्लॉक के तत्व", en: "d and f- Block Elements" },
+            { hi: "उपसहसंयोजक यौगिक", en: "Coordination Compounds" }
+        ];
+        this.renderChapterList(data, "Inorganic Chemistry");
     },
 
-    // 7. RENDER LIST (Common Function)
-    renderChapterList: function(chapterList, subjectName) {
+    // CHEMISTRY 3: ORGANIC (Updated from PDF)
+    loadOrganicChem: function() {
+        const data = [
+            { hi: "कार्बनिक यौगिकों का शोधन और अभिलक्षणन", en: "Purification and Characterisation of Organic Compounds" },
+            { hi: "कार्बनिक रसायन: कुछ आधारभूत सिद्धांत (GOC)", en: "Some Basic Principles of Organic Chemistry" },
+            { hi: "हाइड्रोकार्बन", en: "Hydrocarbons" },
+            { hi: "हैलोएल्केन और हैलोएरीन", en: "Organic Compounds Containing Halogens" },
+            { hi: "ऑक्सीजन युक्त कार्बनिक यौगिक (Alcohol, Phenol, Ether, Aldehyde...)", en: "Organic Compounds Containing Oxygen" },
+            { hi: "नाइट्रोजन युक्त कार्बनिक यौगिक (Amines)", en: "Organic Compounds Containing Nitrogen" },
+            { hi: "जैव अणु", en: "Biomolecules" },
+            { hi: "प्रायोगिक रसायन से संबंधित सिद्धांत", en: "Principles Related to Practical Chemistry" }
+        ];
+        this.renderChapterList(data, "Organic Chemistry");
+    },
+
+    // ================= RENDER LOGIC =================
+
+    renderChapterList: function(list, title) {
         const container = document.getElementById('chapter-list-container');
-        container.innerHTML = ''; // Clear previous list
-        
+        container.innerHTML = ''; // Clear old
+
         // Update Heading
-        const heading = document.querySelector('#screen-chapters h2');
-        if(heading) heading.innerText = `${subjectName} Chapters`;
+        document.getElementById('chapter-heading').innerText = title;
 
-        chapterList.forEach((chap, index) => {
+        list.forEach((chap, i) => {
             const div = document.createElement('div');
-            div.className = 'dash-card';
-            div.style.display = 'flex';
-            div.style.justifyContent = 'space-between';
-            div.style.alignItems = 'center';
-            div.style.marginBottom = '15px';
-            div.style.padding = '20px';
-            div.style.textAlign = 'left';
-
+            div.className = 'chap-card';
             div.innerHTML = `
                 <div>
-                    <h3 style="margin: 0; color: #1e3a8a; font-size: 1.1rem;">${index + 1}. ${chap.hi}</h3>
-                    <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 0.9rem;">${chap.en}</p>
+                    <h4 style="margin:0; color:#1e293b; font-size:1.05rem;">${i+1}. ${chap.hi}</h4>
+                    <p style="margin:4px 0 0; color:#64748b; font-size:0.9rem;">${chap.en}</p>
                 </div>
-                <button class="btn btn-primary" onclick="alert('Starting Test: ${chap.en}')">Start Test</button>
+                <button class="btn-start" onclick="alert('Test Module for: ${chap.en} \\nLaunching Soon...')">Start Test</button>
             `;
             container.appendChild(div);
         });
-        
+
         this.showScreen('screen-chapters');
     }
 };
+
+// SECURITY SCRIPT: Disable Inspect Element & Right Click
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 123) { return false; } // F12
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+});
