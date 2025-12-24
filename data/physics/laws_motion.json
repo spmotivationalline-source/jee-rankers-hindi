@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "text": "दिए गए चित्र में, यदि सतह घर्षण रहित (frictionless) है, तो ब्लॉक का त्वरण (acceleration) 'a' क्या होगा? (g = 10 m/s²)",
+    "image": "<svg width='300' height='200' viewBox='0 0 300 200' style='background:white; border:1px solid #ddd; border-radius:8px;'><path d='M 50,180 L 250,180 L 50,80 Z' fill='none' stroke='black' stroke-width='2'/><text x='70' y='170' font-family='Arial' font-size='14'>30°</text><g transform='rotate(26.5, 130, 110)'><rect x='130' y='110' width='50' height='40' fill='white' stroke='black' stroke-width='2'/><text x='145' y='135' font-family='Arial' font-size='14'>5kg</text><line x1='155' y1='110' x2='155' y2='60' stroke='red' stroke-width='2' marker-end='url(#arrow)'/><text x='160' y='55' fill='red' font-size='12'>N</text><line x1='180' y1='130' x2='230' y2='130' stroke='blue' stroke-width='2' marker-end='url(#arrow)'/><text x='210' y='125' fill='blue' font-size='12'>a</text></g></svg>",
+    "options": ["5 m/s²", "2.5 m/s²", "10 m/s²", "0 m/s²"],
+    "correct": 0,
+    "level": "Easy"
+  },
+  {
+    "id": 2,
+    "text": "चित्र में दिखाए गए पुली सिस्टम में, डोरी में तनाव (Tension) T ज्ञात करें। (m1 = 2kg, m2 = 3kg)",
+    "image": "<svg width='200' height='250' viewBox='0 0 200 250' style='background:white; border:1px solid #ddd; border-radius:8px; margin:auto; display:block;'><line x1='50' y1='20' x2='150' y2='20' stroke='black' stroke-width='3'/><line x1='100' y1='20' x2='100' y2='50' stroke='black' stroke-width='2'/><circle cx='100' cy='70' r='20' fill='white' stroke='black' stroke-width='2'/><line x1='80' y1='70' x2='80' y2='150' stroke='black' stroke-width='2'/><rect x='60' y='150' width='40' height='40' fill='white' stroke='black' stroke-width='2'/><text x='70' y='175' font-family='Arial' font-size='12'>2kg</text><line x1='120' y1='70' x2='120' y2='180' stroke='black' stroke-width='2'/><rect x='100' y='180' width='40' height='40' fill='white' stroke='black' stroke-width='2'/><text x='110' y='205' font-family='Arial' font-size='12'>3kg</text></svg>",
+    "options": ["24 N", "12 N", "48 N", "30 N"],
+    "correct": 0,
+    "level": "Moderate"
+  },
+  {
+    "id": 3,
+    "text": "वेग-समय (v-t) ग्राफ से कण द्वारा 4 सेकंड में तय की गई दूरी ज्ञात करें।",
+    "image": "<svg width='300' height='200' viewBox='0 0 300 200' style='background:white; border:1px solid #ddd; border-radius:8px;'><line x1='40' y1='180' x2='280' y2='180' stroke='black' stroke-width='2'/><line x1='40' y1='180' x2='40' y2='20' stroke='black' stroke-width='2'/><text x='270' y='195' font-family='Arial'>t(s)</text><text x='20' y='30' font-family='Arial'>v(m/s)</text><path d='M 40,180 L 100,50 L 200,50 L 260,180' fill='none' stroke='blue' stroke-width='2'/><text x='30' y='180' font-size='12'>0</text><text x='100' y='195' font-size='12'>2</text><text x='200' y='195' font-size='12'>6</text><text x='260' y='195' font-size='12'>8</text><text x='20' y='50' font-size='12'>10</text><line x1='40' y1='50' x2='200' y2='50' stroke='#ccc' stroke-dasharray='4'/></svg>",
+    "options": ["40 m", "60 m", "80 m", "50 m"],
+    "correct": 1,
+    "level": "Easy"
+  }
+]
