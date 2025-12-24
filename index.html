@@ -14,7 +14,9 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body oncontextmenu="return false;"> <div id="landing-page">
+<body oncontextmenu="return false;">
+
+    <div id="landing-page">
         <nav class="navbar">
             <div class="brand">
                 <span class="logo-icon">🚀</span> JEE Rankers
@@ -72,39 +74,32 @@
             
             <div id="screen-subjects" class="screen">
                 <h3 class="section-head">Select Your Subject</h3>
-                
                 <div class="dash-grid">
-                    
                     <div class="card-3d physics" onclick="app.loadPhysicsChapters()">
                         <div class="icon-3d">⚛️</div>
                         <h3>Physics</h3>
                         <p>31 Chapters • Mechanics, Optics</p>
                     </div>
-
                     <div class="card-3d math" onclick="app.loadMathChapters()">
                         <div class="icon-3d">📐</div>
                         <h3>Mathematics</h3>
                         <p>30 Chapters • Calculus, Algebra</p>
                     </div>
-                    
                     <div class="card-3d chem-phy" onclick="app.loadPhysicalChem()">
                         <div class="icon-3d">⚖️</div>
                         <h3>Physical Chem</h3>
                         <p>Thermodynamics</p>
                     </div>
-
                     <div class="card-3d chem-org" onclick="app.loadOrganicChem()">
                         <div class="icon-3d">🧪</div>
                         <h3>Organic Chem</h3>
                         <p>Hydrocarbons</p>
                     </div>
-
                     <div class="card-3d chem-inorg" onclick="app.loadInorganicChem()">
                         <div class="icon-3d">🧱</div>
                         <h3>Inorganic Chem</h3>
                         <p>Periodic Table</p>
                     </div>
-
                 </div>
             </div>
 
@@ -113,6 +108,79 @@
                 <h2 id="chapter-heading">Chapters</h2>
                 <div id="chapter-list-container" class="chapter-grid">
                     </div>
+            </div>
+
+            <div id="screen-config" class="screen">
+                <div class="config-card">
+                    <h3>🚀 Test Configuration</h3>
+                    <p id="config-chapter-name" style="color:var(--primary); font-weight:600; margin-bottom:15px;">Chapter Name</p>
+                    
+                    <div class="form-group">
+                        <label>Number of Questions:</label>
+                        <select id="config-q-count" class="select-3d">
+                            <option value="5">5 Questions (Demo)</option>
+                            <option value="10">10 Questions</option>
+                            <option value="20">20 Questions</option>
+                            <option value="50">50 Questions (Full Mock)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Time Limit (Minutes):</label>
+                        <input type="number" id="config-timer" class="input-3d" value="30" min="5">
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn-3d btn-back" onclick="app.showScreen('screen-chapters')">Cancel</button>
+                        <button class="btn-3d btn-primary-lg" onclick="app.startActualTest()">Start Exam Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="screen-exam" class="screen">
+                <div class="exam-header-bar">
+                    <div class="timer-box">⏱ <span id="time-remaining">00:00</span></div>
+                    <button class="btn-3d btn-submit" onclick="app.submitExam()">Submit Test</button>
+                </div>
+
+                <div class="question-container">
+                    <div class="q-header">
+                        <span class="q-badge" id="q-level">Hard</span>
+                        <span class="q-number">Question <span id="current-q-no">1</span> of <span id="total-q-no">10</span></span>
+                    </div>
+                    
+                    <div id="q-image-container"></div>
+                    <h3 id="q-text">Question text goes here...</h3>
+
+                    <div id="q-options" class="options-grid">
+                        </div>
+                </div>
+
+                <div class="exam-footer">
+                    <button class="btn-3d btn-nav" onclick="app.prevQuestion()">Previous</button>
+                    <button class="btn-3d btn-nav" onclick="app.nextQuestion()">Next</button>
+                </div>
+            </div>
+
+            <div id="screen-result" class="screen">
+                <h2 style="text-align:center; margin-bottom:20px;">🎉 Test Analysis</h2>
+                
+                <div class="result-overview">
+                    <div class="res-card score">
+                        <h3>Your Score</h3>
+                        <h1 id="res-score">0/0</h1>
+                    </div>
+                    <div class="res-card accuracy">
+                        <h3>Accuracy</h3>
+                        <h1 id="res-accuracy">0%</h1>
+                    </div>
+                </div>
+
+                <div class="chart-container" style="position: relative; height:300px; width:100%; max-width:500px; margin:auto;">
+                    <canvas id="resultChart"></canvas>
+                </div>
+
+                <button class="btn-3d btn-primary-lg" onclick="app.showScreen('screen-subjects')" style="margin-top:30px; width:100%;">Back to Dashboard</button>
             </div>
 
         </main>
