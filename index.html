@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:;">
-    <title>JEE Rankers | 3D Premium Platform</title>
+    <title>JEE Rankers | Premium Prep</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="style.css">
@@ -18,121 +22,86 @@
 
     <div id="landing-page">
         <nav class="navbar">
-            <div class="brand">
-                <span class="logo-icon">🚀</span> JEE Rankers
-            </div>
-            <div class="nav-links">
-                <button class="btn-3d btn-login" onclick="app.enterApp()">Login / Start</button>
-            </div>
+            <div class="brand"><span class="logo-icon">🚀</span> JEE Rankers</div>
+            <button class="btn-3d btn-login" onclick="app.enterApp()">Login</button>
         </nav>
 
-        <section class="hero" id="home">
+        <section class="hero">
             <div class="hero-content">
-                <span class="badge-3d">New Syllabus 2025</span>
-                <h1>Crack JEE Mains <br><span class="highlight">Like a Pro</span></h1>
-                <p>India's first 3D interactive platform for Hindi & English medium aspirants. Secure, Fast, and Effective.</p>
-                <div class="hero-buttons">
-                    <button class="btn-3d btn-primary-lg" onclick="app.enterApp()">START PRACTICING</button>
-                </div>
+                <span class="badge-3d">Target JEE 2025</span>
+                <h1>Master Concepts with <br><span class="highlight">Visual Learning</span></h1>
+                <p>High-quality diagrams, NTA pattern questions, and instant analysis.</p>
+                <button class="btn-3d btn-primary-lg" onclick="app.enterApp()">START PRACTICING</button>
             </div>
-            
             <div class="hero-visual">
-                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="3D Education" class="main-img">
+                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="Study" class="main-img">
             </div>
         </section>
-
-        <div class="stats-strip">
-            <div class="stat-box"><strong>50k+</strong><span>Questions</span></div>
-            <div class="stat-box"><strong>3D</strong><span>Interface</span></div>
-            <div class="stat-box"><strong>4.9/5</strong><span>Rating</span></div>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 JEE Rankers. Designed for Professionals.</p>
-        </footer>
     </div>
 
     <div id="app-dashboard" style="display: none;">
-        
-        <div class="mobile-overlay" onclick="app.toggleSidebar()"></div>
-
         <aside class="sidebar" id="mySidebar">
             <div class="brand-side">JEE Rankers</div>
-            <div class="menu-item active" onclick="app.showScreen('screen-subjects'); app.toggleSidebar()">📚 Subjects</div>
-            <div class="menu-item" onclick="alert('Analysis Coming Soon'); app.toggleSidebar()">📊 Analytics</div>
+            <div class="menu-item active" onclick="app.enterApp()">📚 Subjects</div>
+            <div class="menu-item" onclick="alert('Coming Soon')">📊 Analysis</div>
             <div class="menu-item logout" onclick="app.logout()">🚪 Logout</div>
         </aside>
 
         <main class="main-area">
             <header class="top-bar">
-                <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="display: flex; gap: 15px; align-items: center;">
                     <button class="menu-btn-mobile" onclick="app.toggleSidebar()">☰</button>
-                    <h2>Welcome, Aspirant!</h2>
+                    <h2>Dashboard</h2>
                 </div>
                 <div class="user-badge-3d">S</div>
             </header>
             
             <div id="screen-subjects" class="screen">
-                <h3 class="section-head">Select Your Subject</h3>
+                <h3 class="section-head">Choose Subject</h3>
                 <div class="dash-grid">
                     <div class="card-3d physics" onclick="app.loadPhysicsChapters()">
                         <div class="icon-3d">⚛️</div>
                         <h3>Physics</h3>
-                        <p>31 Chapters • Mechanics, Optics</p>
+                        <p>Mechanics, Optics</p>
                     </div>
                     <div class="card-3d math" onclick="app.loadMathChapters()">
                         <div class="icon-3d">📐</div>
                         <h3>Mathematics</h3>
-                        <p>30 Chapters • Calculus, Algebra</p>
+                        <p>Calculus, Algebra</p>
                     </div>
                     <div class="card-3d chem-phy" onclick="app.loadPhysicalChem()">
                         <div class="icon-3d">⚖️</div>
-                        <h3>Physical Chem</h3>
-                        <p>Thermodynamics</p>
-                    </div>
-                    <div class="card-3d chem-org" onclick="app.loadOrganicChem()">
-                        <div class="icon-3d">🧪</div>
-                        <h3>Organic Chem</h3>
-                        <p>Hydrocarbons</p>
-                    </div>
-                    <div class="card-3d chem-inorg" onclick="app.loadInorganicChem()">
-                        <div class="icon-3d">🧱</div>
-                        <h3>Inorganic Chem</h3>
-                        <p>Periodic Table</p>
+                        <h3>Chemistry</h3>
+                        <p>Physical, Organic, Inorganic</p>
                     </div>
                 </div>
             </div>
 
             <div id="screen-chapters" class="screen">
-                <button class="btn-3d btn-back" onclick="app.showScreen('screen-subjects')">← Back to Subjects</button>
+                <button class="btn-3d btn-back" onclick="app.showScreen('screen-subjects')">← Back</button>
                 <h2 id="chapter-heading">Chapters</h2>
-                <div id="chapter-list-container" class="chapter-grid">
-                    </div>
+                <div id="chapter-list-container" class="chapter-grid"></div>
             </div>
 
             <div id="screen-config" class="screen">
                 <div class="config-card">
-                    <h3>🚀 Test Configuration</h3>
-                    <p id="config-chapter-name" style="color:var(--primary); font-weight:600; margin-bottom:15px;">Chapter Name</p>
-                    
+                    <h3>⚙️ Test Setup</h3>
+                    <p id="config-chapter-name" style="color:var(--primary); font-weight:bold;">Chapter</p>
                     <div class="form-group">
-                        <label>Number of Questions:</label>
+                        <label>Questions:</label>
                         <select id="config-q-count" class="select-3d">
-                            <option value="5">5 Questions (Demo)</option>
-                            <option value="10">10 Questions</option>
-                            <option value="20">20 Questions</option>
-                            <option value="50">50 Questions (Full Mock)</option>
+                            <option value="5">5 (Demo)</option>
+                            <option value="10">10 (Short)</option>
+                            <option value="25">25 (JEE Mains)</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label>Time Limit (Minutes):</label>
-                        <input type="number" id="config-timer" class="input-3d" value="30" min="5">
+                        <label>Time (Mins):</label>
+                        <input type="number" id="config-timer" class="input-3d" value="30">
                     </div>
-
                     <div class="btn-group">
                         <button class="btn-3d btn-back" onclick="app.showScreen('screen-chapters')">Cancel</button>
-                        <button class="btn-3d btn-primary-lg" onclick="app.startActualTest()">Start Exam Now</button>
+                        <button class="btn-3d btn-primary-lg" onclick="app.startActualTest()">Start Test</button>
                     </div>
                 </div>
             </div>
@@ -140,22 +109,17 @@
             <div id="screen-exam" class="screen">
                 <div class="exam-header-bar">
                     <div class="timer-box">⏱ <span id="time-remaining">00:00</span></div>
-                    <button class="btn-3d btn-submit" onclick="app.submitExam()">Submit Test</button>
+                    <button class="btn-3d btn-submit" onclick="app.submitExam()">Submit</button>
                 </div>
-
                 <div class="question-container">
                     <div class="q-header">
                         <span class="q-badge" id="q-level">Hard</span>
-                        <span class="q-number">Question <span id="current-q-no">1</span> of <span id="total-q-no">10</span></span>
+                        <span>Q <span id="current-q-no">1</span> / <span id="total-q-no">10</span></span>
                     </div>
-                    
-                    <div id="q-image-container"></div>
-                    <h3 id="q-text">Question text goes here...</h3>
-
-                    <div id="q-options" class="options-grid">
-                        </div>
+                    <div id="q-image-container" class="diagram-box"></div>
+                    <div id="q-text" class="q-text-content"></div>
+                    <div id="q-options" class="options-grid"></div>
                 </div>
-
                 <div class="exam-footer">
                     <button class="btn-3d btn-nav" onclick="app.prevQuestion()">Previous</button>
                     <button class="btn-3d btn-nav" onclick="app.nextQuestion()">Next</button>
@@ -163,29 +127,18 @@
             </div>
 
             <div id="screen-result" class="screen">
-                <h2 style="text-align:center; margin-bottom:20px;">🎉 Test Analysis</h2>
-                
+                <h2 style="text-align:center;">Result Analysis</h2>
                 <div class="result-overview">
-                    <div class="res-card score">
-                        <h3>Your Score</h3>
-                        <h1 id="res-score">0/0</h1>
-                    </div>
-                    <div class="res-card accuracy">
-                        <h3>Accuracy</h3>
-                        <h1 id="res-accuracy">0%</h1>
-                    </div>
+                    <div class="res-card"><h3>Score</h3><h1 id="res-score">0/0</h1></div>
+                    <div class="res-card"><h3>Accuracy</h3><h1 id="res-accuracy">0%</h1></div>
                 </div>
-
-                <div class="chart-container" style="position: relative; height:300px; width:100%; max-width:500px; margin:auto;">
+                <div class="chart-container" style="max-width:400px; margin:auto;">
                     <canvas id="resultChart"></canvas>
                 </div>
-
-                <button class="btn-3d btn-primary-lg" onclick="app.showScreen('screen-subjects')" style="margin-top:30px; width:100%;">Back to Dashboard</button>
+                <button class="btn-3d btn-primary-lg" onclick="app.enterApp()" style="width:100%; margin-top:20px;">Go Home</button>
             </div>
-
         </main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
