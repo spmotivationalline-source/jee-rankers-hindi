@@ -1,1 +1,18 @@
-
+[
+  {
+    "id": 1,
+    "text": "A projectile is fired at an angle of 45°. Which graph correctly shows the trajectory?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Ideal_projectile_motion_for_different_angles.svg",
+    "options": ["Parabolic", "Straight Line", "Circular", "Hyperbolic"],
+    "correct": 0,
+    "level": "Easy"
+  },
+  {
+    "id": 2,
+    "text": "In the velocity-time graph shown, what is the acceleration from t=0 to t=2s?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Velocity_time_graph.svg/300px-Velocity_time_graph.svg.png",
+    "options": ["$2 m/s^2$", "$4 m/s^2$", "$0 m/s^2$", "$1 m/s^2$"],
+    "correct": 3,
+    "level": "Moderate"
+  }
+]
