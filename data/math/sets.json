@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "text": "If A = {1, 2, 3} and B = {3, 4, 5}, then (A ∩ B) is:",
+    "image": null, 
+    "options": ["{1, 2}", "{3}", "{4, 5}", "{1, 2, 3, 4, 5}"],
+    "correct": 1,
+    "level": "Easy",
+    "explanation": "Intersection means common elements. 3 is present in both."
+  },
+  {
+    "id": 2,
+    "text": "Look at the Venn Diagram below. The shaded region represents:",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Venn_A_intersect_B.svg/1200px-Venn_A_intersect_B.svg.png",
+    "options": ["A - B", "A ∪ B", "A ∩ B", "B - A"],
+    "correct": 2,
+    "level": "Moderate",
+    "explanation": "The shaded area is the overlap between A and B."
+  },
+  {
+    "id": 3,
+    "text": "For IIT JEE Hard Level: If f(x) = log((1-x)/(1+x)), then f(2x/(1+x^2)) is equal to:",
+    "image": null,
+    "options": ["2f(x)", "f(x)^2", "-f(x)", "f(x)"],
+    "correct": 0,
+    "level": "Hard",
+    "explanation": "Using properties of logarithm, we get 2f(x)."
+  }
+]
